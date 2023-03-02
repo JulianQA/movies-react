@@ -1,0 +1,32 @@
+@import "../../base";
+
+.AsideBar {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 15%;
+  padding-inline: 24px;
+  height: 90vh;
+  &__menu {
+  }
+  .flex-AsideBar-menu {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 12px;
+    font-size: 1.4rem;
+    gap: 12px;
+    cursor: pointer;
+    &.active {
+      background-color: $hover-secondary-color;
+      @include borderRadius(12px);
+      font-weight: bold;
+    }
+  }
+  .flex-AsideBar-menu:hover {
+    background-color: $hover-secondary-color;
+    @include borderRadius(12px);
+    font-weight: bold;
+  }
+}

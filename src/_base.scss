@@ -1,0 +1,14 @@
+$primary-color: #ffffff;
+$secondary-color: #40d391;
+$third-color: #eef3f1;
+$hover-secondary-color: #c4f8dd;
+$text-color: #000000;
+$secondary-text-color: #c4d2cb;
+
+@mixin borderRadius($size) {
+  border-radius: $size;
+  -webkit-border-radius: $size;
+  -moz-border-radius: $size;
+  -ms-border-radius: $size;
+  -o-border-radius: $size;
+}

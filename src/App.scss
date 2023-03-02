@@ -1,1 +1,23 @@
+@import "./base";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
+html {
+  font-size: 62.5%;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  background-color: $third-color;
+}
+.Layout__main-content {
+  display: flex;
+  padding-top: 10vh;
+}
+
+.main-content {
+  width: 85%;
+  padding-left: 15%;
+}
