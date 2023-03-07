@@ -1,0 +1,27 @@
+@import "../../base";
+
+.MovieSlider {
+  display: flex;
+  align-items: center;
+  &__slider {
+    display: flex;
+    gap: 24px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+    scroll-behavior: smooth;
+  }
+  &__arrow {
+    width: 80px;
+    height: 40px;
+    cursor: pointer;
+    opacity: 0.5;
+  }
+  ::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.MovieSlider__arrow:hover {
+  opacity: 1;
+}

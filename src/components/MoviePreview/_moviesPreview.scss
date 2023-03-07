@@ -1,0 +1,61 @@
+@import "../../base";
+
+.MoviePreview {
+  min-width: 180px;
+  height: 280px;
+  background-color: $primary-color;
+  box-shadow: 0px 0px 8px 0px #8ba79a;
+  margin-block: 24px;
+  cursor: pointer;
+  @include borderRadius(30px);
+  &__img-container {
+    width: 140px;
+    height: 200px;
+    margin: 0 auto;
+    margin-block: 8px;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      @include borderRadius(35px);
+    }
+  }
+  &__details {
+    display: flex;
+    flex-direction: column;
+    padding-inline: 24px;
+    margin-bottom: 4px;
+    span:nth-child(1) {
+      display: -webkit-box;
+      white-space: normal;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+      text-overflow: ellipsis;
+      font-weight: bold;
+      overflow: hidden;
+      font-size: 1.4rem;
+    }
+    span:nth-child(2) {
+      font-size: 1.2rem;
+      font-style: italic;
+      display: -webkit-box;
+      white-space: normal;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+  }
+  &__stars {
+    display: flex;
+    align-items: center;
+    font-size: 1.2rem;
+    padding-left: 24px;
+    font-weight: bold;
+    gap: 2px;
+    svg {
+      color: #ffd900;
+      padding-top: 2px;
+    }
+  }
+}
