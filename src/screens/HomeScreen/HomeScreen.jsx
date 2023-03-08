@@ -9,8 +9,10 @@ const HomeScreen = () => {
   return (
     <div className="HomeScreen main-content">
       {data && <MainMovie movies={data?.results} />}
-      {current && <MovieSlider movies={current?.results} />}
-      {data && <MovieSlider movies={data?.results} />}
+      {current && (
+        <MovieSlider movies={current?.results} title={"Current Movies"} />
+      )}
+      {data && <MovieSlider movies={data?.results} title={"Trending Movies"} />}
     </div>
   );
 };

@@ -12,3 +12,20 @@ $secondary-text-color: #c4d2cb;
   -ms-border-radius: $size;
   -o-border-radius: $size;
 }
+
+@mixin lineClamp($number) {
+  display: -webkit-box;
+  white-space: normal;
+  -webkit-line-clamp: $number;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+@mixin transition($property, $time, $aceleration) {
+  transition: $property $time $aceleration;
+  -webkit-transition: $property $time $aceleration;
+  -moz-transition: $property $time $aceleration;
+  -ms-transition: $property $time $aceleration;
+  -o-transition: $property $time $aceleration;
+}

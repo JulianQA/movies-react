@@ -6,7 +6,7 @@ import {
 } from "react-icons/md";
 import "./_movieSliders.scss";
 
-const MovieSlider = ({ movies }) => {
+const MovieSlider = ({ movies, title }) => {
   const slider = useRef(null);
 
   const scrollLeft = () => {
@@ -17,19 +17,22 @@ const MovieSlider = ({ movies }) => {
   };
   return (
     <div className="MovieSlider">
-      <MdOutlineKeyboardArrowLeft
-        className="MovieSlider__arrow"
-        onClick={scrollLeft}
-      />
-      <div className="MovieSlider__slider" ref={slider}>
-        {movies.map((movie) => (
-          <MoviePreview movie={movie} key={movie?.id} />
-        ))}
+      <p className="MovieSlider__title">{title}</p>
+      <div className="MovieSlider__container">
+        <MdOutlineKeyboardArrowLeft
+          className="MovieSlider__arrow"
+          onClick={scrollLeft}
+        />
+        <div className="MovieSlider__slider" ref={slider}>
+          {movies.map((movie) => (
+            <MoviePreview movie={movie} key={movie?.id} />
+          ))}
+        </div>
+        <MdKeyboardArrowRight
+          className="MovieSlider__arrow"
+          onClick={scrollRight}
+        />
       </div>
-      <MdKeyboardArrowRight
-        className="MovieSlider__arrow"
-        onClick={scrollRight}
-      />
     </div>
   );
 };

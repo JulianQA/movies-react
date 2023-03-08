@@ -32,7 +32,19 @@
       cursor: pointer;
       padding-bottom: 4px;
     }
-    .routes__route:hover {
+    .routes__route:nth-child(2) {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      svg {
+        transform: rotate(90deg);
+        -webkit-transform: rotate(90deg);
+        -moz-transform: rotate(90deg);
+        -ms-transform: rotate(90deg);
+        -o-transform: rotate(90deg);
+      }
+    }
+    .routes__route:nth-child(1):hover {
       border-bottom: 2px solid $secondary-color;
     }
     .routes__route.active {

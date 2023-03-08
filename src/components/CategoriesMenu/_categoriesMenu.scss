@@ -1,0 +1,39 @@
+@import "../../base";
+
+.CategoriesMenu {
+  position: absolute;
+  top: 8vh;
+  width: 100%;
+  background-color: $third-color;
+  max-height: 250px;
+  opacity: 0;
+  visibility: hidden;
+  @include transition(opacity, 1s, ease-in-out);
+  &.isActive {
+    opacity: 1;
+    visibility: visible;
+  }
+  &__ul {
+    width: 50%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 24px;
+  }
+
+  &__genre {
+    flex-grow: 1;
+    width: 33%;
+    font-size: 1.4rem;
+    margin-bottom: 4px;
+    span {
+      font-weight: bold;
+      cursor: pointer;
+    }
+    span:hover {
+      color: $secondary-color;
+      border-bottom: 1px solid $secondary-color;
+    }
+  }
+}

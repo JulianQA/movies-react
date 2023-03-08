@@ -1,8 +1,15 @@
 @import "../../base";
 
 .MovieSlider {
-  display: flex;
-  align-items: center;
+  &__container {
+    display: flex;
+    align-items: center;
+  }
+  &__title {
+    padding-left: 24px;
+    font-size: 1.6rem;
+    font-weight: bold;
+  }
   &__slider {
     display: flex;
     gap: 24px;
