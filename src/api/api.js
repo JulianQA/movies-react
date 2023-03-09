@@ -23,3 +23,11 @@ export const getMoviesByGenre = async (id, page) => {
   const data = await response.json();
   return data;
 };
+
+export const getMoviesBySearch = async (query, page) => {
+  const response = await fetch(
+    `${URL_API}search/movie?api_key=${key}&page=${page}&query=${query}`
+  );
+  const data = await response.json();
+  return data;
+};

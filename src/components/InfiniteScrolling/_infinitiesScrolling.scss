@@ -1,0 +1,12 @@
+@import "../../base";
+
+.InfiniteScrolling {
+  width: 90%;
+  margin: 0 auto;
+  &__movies-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 180px));
+    place-content: center;
+    gap: 24px;
+  }
+}

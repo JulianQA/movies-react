@@ -11,8 +11,10 @@ const Header = () => {
   const navigate = useNavigate();
   const [active, setActive] = useState();
   const [toggleMenu, setToggleMenu] = useState(false);
+  const [valueSearch, setValueSearch] = useState("");
   const handleSubmit = (e) => {
     e.preventDefault();
+    navigate(`/search/${valueSearch}`);
   };
   const handleNavigate = (route) => {
     navigate(route);
@@ -49,7 +51,12 @@ const Header = () => {
         </div>
       </nav>
       <form onSubmit={handleSubmit} className="Header__form">
-        <input type="text" className="Header__input" />
+        <input
+          type="text"
+          className="Header__input"
+          value={valueSearch || ""}
+          onChange={(e) => setValueSearch(e.target.value)}
+        />
         <button className="Header__button">
           <IoIosSearch className="button__icon" />
         </button>

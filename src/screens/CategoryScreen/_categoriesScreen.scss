@@ -1,16 +1,9 @@
 @import "../../base";
 
 .CategoryScreen {
-  width: 90%;
-  margin: 0 auto;
   &__title {
     font-size: 2rem;
     font-weight: bold;
-  }
-  &__movies-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 180px));
-    place-content: center;
-    gap: 24px;
+    text-align: center;
   }
 }
