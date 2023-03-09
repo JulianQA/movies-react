@@ -9,7 +9,7 @@ import { useSelector } from "react-redux";
 
 const Header = () => {
   const navigate = useNavigate();
-  const [active, setActive] = useState("home");
+  const [active, setActive] = useState();
   const [toggleMenu, setToggleMenu] = useState(false);
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -39,7 +39,10 @@ const Header = () => {
         </div>
         <div
           className="routes__route"
-          onClick={() => setToggleMenu(!toggleMenu)}
+          onClick={() => {
+            setToggleMenu(!toggleMenu);
+            setActive(null);
+          }}
         >
           <span>Categories</span>
           <MdKeyboardArrowRight size={15} />

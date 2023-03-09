@@ -1,7 +1,11 @@
 import { useEffect, useState } from "react";
 import { key, URL_API } from "../api/api";
 
-export const useFetch = (endPoints, dependencies = []) => {
+export const useFetch = (
+  endPoints,
+  dependencies = [],
+  queryParameters = ""
+) => {
   const abortController = new AbortController();
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -9,16 +13,18 @@ export const useFetch = (endPoints, dependencies = []) => {
 
   useEffect(() => {
     fetchData();
-    console.log("fired once");
     return () => abortController.abort();
   }, dependencies);
 
   const fetchData = async () => {
     try {
       setLoading(true);
-      const response = await fetch(`${URL_API}${endPoints}?api_key=${key}`, {
-        signal: abortController.signal,
-      });
+      const response = await fetch(
+        `${URL_API}${endPoints}?api_key=${key}&${queryParameters}`,
+        {
+          signal: abortController.signal,
+        }
+      );
       const results = await response.json();
       setData(results);
     } catch (error) {

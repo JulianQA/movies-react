@@ -15,3 +15,11 @@ export const getListOfGenres = async () => {
   const response = await fetchData("genre/movie/list");
   return response;
 };
+
+export const getMoviesByGenre = async (id, page) => {
+  const response = await fetch(
+    `${URL_API}discover/movie?api_key=${key}&page=${page}&with_genres=${id}`
+  );
+  const data = await response.json();
+  return data;
+};
