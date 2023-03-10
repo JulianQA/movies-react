@@ -89,3 +89,28 @@
     @include borderRadius(32px);
   }
 }
+
+@media (max-width: 767px) {
+  .Header {
+    justify-content: space-between;
+    &__logo,
+    &__login {
+      display: none;
+    }
+    &__form {
+      width: 50%;
+    }
+  }
+}
+@media (max-width: 320px) {
+  .Header {
+    padding: 12px;
+    justify-content: normal;
+    &__form {
+      width: 100%;
+    }
+    &__routes {
+      gap: 4px;
+    }
+  }
+}

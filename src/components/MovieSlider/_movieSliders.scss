@@ -32,3 +32,11 @@
 .MovieSlider__arrow:hover {
   opacity: 1;
 }
+
+@media (max-width: 768px) {
+  .MovieSlider {
+    &__arrow {
+      display: none;
+    }
+  }
+}
