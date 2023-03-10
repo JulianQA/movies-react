@@ -1,0 +1,9 @@
+@import "../../base";
+
+.GenreMovieDetail {
+  font-size: 1.8rem;
+  padding: 12px;
+  border: 1px solid $text-color;
+  cursor: pointer;
+  @include borderRadius(24px);
+}

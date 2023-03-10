@@ -1,0 +1,46 @@
+@import "../../base";
+
+.MovieScreen {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 60%;
+  margin: 0 auto;
+  &__movie-container {
+    margin-bottom: 24px;
+    img {
+      width: 100%;
+      @include borderRadius(24px);
+      object-fit: contain;
+    }
+  }
+  &__title {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  &__overview {
+    font-size: 1.8rem;
+    font-style: italic;
+  }
+  &__votes {
+    display: flex;
+    align-items: center;
+    span {
+      font-size: 2rem;
+      font-weight: bold;
+    }
+    svg {
+      color: gold;
+    }
+  }
+  &__release-date {
+    font-size: 1.8rem;
+    span:nth-child(1) {
+      font-weight: bold;
+    }
+  }
+  &__genres {
+    display: flex;
+    gap: 12px;
+  }
+}

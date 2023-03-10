@@ -6,6 +6,10 @@ import { useFetch } from "../../hooks/useFetch";
 const HomeScreen = () => {
   const { data } = useFetch("/trending/movie/week");
   const { data: current } = useFetch("/movie/now_playing");
+
+  useEffect(() => {
+    document.title = "JMovies";
+  }, []);
   return (
     <div className="HomeScreen main-content">
       {data && <MainMovie movies={data?.results} />}
