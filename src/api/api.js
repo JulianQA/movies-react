@@ -1,4 +1,4 @@
-export const URL_API = "https://api.themoviedb.org/3/";
+export const URL_API = "https://api.themoviedb.org/3";
 export const key = process.env.REACT_APP_API_KEY;
 export const URL_IMAGES = "https://image.tmdb.org/t/p/w500";
 
@@ -12,13 +12,13 @@ export const fetchData = async (endPoints) => {
   }
 };
 export const getListOfGenres = async () => {
-  const response = await fetchData("genre/movie/list");
+  const response = await fetchData("/genre/movie/list");
   return response;
 };
 
 export const getMoviesByGenre = async (id, page) => {
   const response = await fetch(
-    `${URL_API}discover/movie?api_key=${key}&page=${page}&with_genres=${id}`
+    `${URL_API}/discover/movie?api_key=${key}&page=${page}&with_genres=${id}`
   );
   const data = await response.json();
   return data;
@@ -26,7 +26,7 @@ export const getMoviesByGenre = async (id, page) => {
 
 export const getMoviesBySearch = async (query, page) => {
   const response = await fetch(
-    `${URL_API}search/movie?api_key=${key}&page=${page}&query=${query}`
+    `${URL_API}/search/movie?api_key=${key}&page=${page}&query=${query}`
   );
   const data = await response.json();
   return data;
